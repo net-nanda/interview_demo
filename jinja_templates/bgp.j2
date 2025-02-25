@@ -1,0 +1,12 @@
+conf t 
+router bgp {{dict.asn}}
+no auto-summary
+no synchronization
+neighbor {{dict.nbr1}} remote-as {{dict.nbr1_asn}}
+neighbor {{dict.nbr2}} remote-as {{dict.nbr2_asn}}
+network {{dict.wan_net1}} mask {{dict.wan_mask}}
+network {{dict.wan_net2}} mask {{dict.wan_mask}}
+network {{dict.lo0_net}} mask {{dict.lan_mask}}
+network {{dict.lo1_net}} mask {{dict.lan_mask}}
+network {{dict.lo2_net}} mask {{dict.lan_mask}}
+network {{dict.lo3_net}} mask {{dict.lan_mask}}

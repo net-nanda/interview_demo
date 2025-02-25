@@ -1,0 +1,18 @@
+conf t
+int lo0
+ip address {{dev_vars.lo0}} 255.255.255.0
+int lo1
+ip address {{dev_vars.lo1}} 255.255.255.0
+int lo2
+ip address {{dev_vars.lo2}} 255.255.255.0
+int lo3
+ip address {{dev_vars.lo3}} 255.255.255.0
+int s0/0
+ip address {{dev_vars.s0_0}} 255.255.255.252
+no shut
+int s0/1
+ip address {{dev_vars.s0_1}} 255.255.255.252
+no shut
+end
+wr mem
+
