@@ -70,13 +70,11 @@ def config_worker(dev_list):
         r4_dict.update({'nbr1':r3_dict['s0_0'], 'nbr2':r1_dict['s0_1'],
                         'nbr1_asn': r3_dict['asn'], 'nbr2_asn':r1_dict['asn']})
         j_dict = r4_dict
-    print(j_dict)
     bgp_config = bgp_config_tmp.render(dict=j_dict)
-    print(bgp_config)
-    print('#'*5+' loggin to device '+dev_list+'#'*5)
+    print('#'*5+' configuring EBGP on '+dev_list+'#'*5)
     output = session.send_config_set(bgp_config)
     print(output)
-    print('#'*20)
+    print('#'*5+'END OF CONFIG'+dev_list+'#'*5)
     return
 
 dev_list = sys.argv[1:]
